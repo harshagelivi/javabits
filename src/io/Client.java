@@ -11,7 +11,12 @@ public class Client
         
         try
         {
+            /*
+             * client connects to the server at 127.0.0.1
+             * at port 5678
+             */
             Socket sock = new Socket("127.0.0.1", 5678);
+            
             
             InputStreamReader isr = new InputStreamReader(sock.getInputStream());
             

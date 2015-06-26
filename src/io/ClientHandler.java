@@ -1,5 +1,7 @@
 package io;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.Socket;
 
 public class ClientHandler implements Runnable{
@@ -10,7 +12,18 @@ public class ClientHandler implements Runnable{
 	}
 	@Override
 	public void run() {
-		
+        PrintWriter pwriter;
+        try {
+            pwriter = new PrintWriter(sock.getOutputStream());
+            
+            pwriter.println("Server at 5678");
+            
+            pwriter.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
 		
 	}
 
