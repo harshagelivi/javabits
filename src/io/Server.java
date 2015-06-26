@@ -12,16 +12,17 @@ public class Server
         try
         {
             ServerSocket serverSock = new ServerSocket(5678);
+            while(true){
+	            Socket sock = serverSock.accept();
+	            
+	            PrintWriter pwriter = new PrintWriter(sock.getOutputStream());
+	            
+	            pwriter.println("Server at 5678");
+	            
+	            pwriter.close();
+            }    
             
-            Socket sock = serverSock.accept();
-            
-            PrintWriter pwriter = new PrintWriter(sock.getOutputStream());
-            
-            pwriter.println("Server at 5678");
-            
-            pwriter.close();
-            
-            serverSock.close();
+          //  serverSock.close();
             
             
             
