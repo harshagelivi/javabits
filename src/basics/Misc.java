@@ -17,6 +17,10 @@ public class Misc
         //b.show();
         //new Misc().nons_method(b);
 
+        //method(b);
+        Object obj1 = new String("hehe");
+        Object obj2 = new Integer(45);
+        System.out.println(obj1.equals(obj2));
     }
     
     public static void method(Base b)
